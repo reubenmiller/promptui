@@ -76,6 +76,12 @@ type Select struct {
 
 	// A function that determines how to render the cursor
 	Pointer Pointer
+
+	// Stdout overwrites the default stdout
+	Stdout io.Writer
+
+	// Stderr overwrites the default stderr
+	Stderr io.Writer
 }
 
 // SelectKeys defines the available keys used by select mode to enable the user to move around the list
@@ -217,9 +223,9 @@ func (s *Select) RunCursorAt(cursorPos, scroll int) (int, string, error) {
 
 func (s *Select) innerRun(cursorPos, scroll int, top rune) (int, string, error) {
 	stdin := readline.NewCancelableStdin(os.Stdin)
-	fmt.Printf("RMI Custom library\n")
 	c := &readline.Config{
-		Stdout: os.Stdout,
+		Stdout: s.Stdout,
+		Stderr: s.Stderr,
 	}
 	err := c.Init()
 	if err != nil {
