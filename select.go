@@ -217,7 +217,10 @@ func (s *Select) RunCursorAt(cursorPos, scroll int) (int, string, error) {
 
 func (s *Select) innerRun(cursorPos, scroll int, top rune) (int, string, error) {
 	stdin := readline.NewCancelableStdin(os.Stdin)
-	c := &readline.Config{}
+	fmt.Printf("RMI Custom library\n")
+	c := &readline.Config{
+		Stdout: os.Stdout,
+	}
 	err := c.Init()
 	if err != nil {
 		return 0, "", err

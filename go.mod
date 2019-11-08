@@ -1,4 +1,6 @@
-module github.com/manifoldco/promptui
+module github.com/reubenmiller/promptui
+
+replace github.com/manifoldco/promptui => ./
 
 require (
 	github.com/alecthomas/gometalinter v3.0.0+incompatible
@@ -29,3 +31,5 @@ require (
 //
 // After that point, we should be able to remove it.
 exclude gopkg.in/alecthomas/kingpin.v3-unstable v3.0.0-20180810215634-df19058c872c
+
+go 1.13
