@@ -9,8 +9,8 @@ import (
 
 	"github.com/chzyer/readline"
 	"github.com/juju/ansiterm"
-	"github.com/reubenmiller/promptui/list"
-	"github.com/reubenmiller/promptui/screenbuf"
+	"github.com/manifoldco/promptui/list"
+	"github.com/manifoldco/promptui/screenbuf"
 )
 
 // SelectedAdd is used internally inside SelectWithAdd when the add option is selected in select mode.

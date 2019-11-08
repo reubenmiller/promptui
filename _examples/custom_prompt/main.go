@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/reubenmiller/promptui"
+	"github.com/manifoldco/promptui"
 )
 
 type pepper struct {
